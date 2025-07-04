@@ -32,17 +32,24 @@ form.addEventListener("submit", async function (e) {
     // Error handling
     if (!res.ok) {
       form.reset();
-      statusMessage.textContent = `❌ Error: ${result.message}`;
+      statusMessage.classList.remove("success");
+      statusMessage.classList.add("error");
+      statusMessage.textContent = `Error: ${result.message}`;
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
       return;
     }
 
-    statusMessage.textContent = "✅ User submitted successfully";
+    statusMessage.classList.add("success");
+    statusMessage.textContent = "User submitted successfully!";
 
     setTimeout(() => {
+      statusMessage.classList.remove("success");
       statusMessage.textContent = "";
       form.reset();
     }, 2000);
   } catch (err) {
-    statusMessage.textContent = `❌ Network Error: Something went wrong.`;
+    statusMessage.textContent = `Network Error: Something went wrong.`;
   }
 });

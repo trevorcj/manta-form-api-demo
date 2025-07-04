@@ -4,20 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Add users</title>
   </head>
   <body>
-    <h2>Add New Users</h2>
+    <main>
+      <h2>Add A New User</h2>
 
-    <form id="userForm">
-      <input type="text" name="first_name" placeholder="First name" required />
-      <input type="text" name="last_name" placeholder="Last name" required />
-      <input type="email" name="email" placeholder="Email address" />
-      <input type="text" name="job" placeholder="Job Title" required />
-      <input type="text" name="contact" placeholder="Contact" />
-      <button type="submit">Submit</button>
-    </form>
+      <form id="userForm">
+        <div>
+          <label>First Name <span class="required">*</span></label>
+          <input type="text" name="first_name" placeholder="First name" />
+        </div>
 
-    <p class="statusMessage"></p>
+        <div>
+          <label>Last Name <span class="required">*</span></label>
+          <input type="text" name="last_name" placeholder="Last name" />
+        </div>
+
+        <div>
+          <label>Email address <span class="required">*</span></label>
+          <input type="email" name="email" placeholder="Email address" />
+        </div>
+
+        <div>
+          <label>Job Title</label>
+          <input type="text" name="job" placeholder="Job Title" />
+        </div>
+
+        <div>
+          <label>Contact</label>
+          <input type="text" name="contact" placeholder="Contact" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+
+      <p class="statusMessage"></p>
+    </main>
   </body>
 </html>
